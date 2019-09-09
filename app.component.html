@@ -4,10 +4,9 @@
 
         <div class="chips-headers">Input SubCategories</div>
         
-<form class="form-horizontal" 
-		  >
+<form class="form-horizontal" class="chips-headers">
 
-        <input type="text" class="e-input" width="200" />
+        <input #input type="text" class="e-input" width="200"/><button type="button" (click)="addChip($event)">Add</button>
         <div class="sample-padding">
             <ejs-chiplist id="chip-avatar" enableDelete="true" [chips]="chips">
 

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 /**
  * Default Chips component
@@ -11,15 +11,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class AppComponent {
+  	@ViewChild('input')
+	  input:Input;
     chips:any = [{id:1, text:'Aaaa'}, {id:2, text:'Bbbb'}, {id:3, text:'Cccc'}, {id:4, text:'Dddd'}, ];
 
 
-    addChip(text:string) {
-      this.chips.push({id:null, text:text});
+    addChip(event: any) {
+      console.log(event);
+      this.input.nativeElement.text = '';
+      //this.chips.push({id:null, text:text});
     }
 
-    submit() {
-      
-    }
+
 
 }
